@@ -1,20 +1,20 @@
 #include <stdio.h>
 int main() {
-	int i, j, c;
-	int n;
-	scanf("%d", &n);
-	
-	for(i = 1; i <=n; i++)
-	{
-		for(j = 1; j <= n-i; j++){
-			printf(" ");
-		}	
-		for(c = 1; c <= 2*i-1; c++){
-			printf("*");
-		}
-		printf("\n");
-	}	
-
+    int h, m, t;
+    scanf("%d %d %d", &h, &m, &t);
+    
+    h += t / 60;
+    m += t % 60;
+    
+    if(m >= 60){
+        h += 1;
+        m -= 60;
+    }
+    if(h >= 24){
+        h -= 24;
+    }
+    
+    printf("%d %d", h, m);
 
 
 
